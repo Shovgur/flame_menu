@@ -25,7 +25,7 @@ export default function Home() {
           height={60}
           className="rounded-full"
         />
-        <h1 className="text-4xl md:text-6xl font-bold tracking-widest">
+        <h1 className="text-3xl md:text-6xl font-bold tracking-widest">
           FLAME BY LUI
         </h1>
       </motion.div>
