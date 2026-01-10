@@ -4,14 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-type TabKey =
-  | "all"
-  | "alcohol"
-  | "cocktails"
-  | "soft"
-  | "tea"
-  | "hookah"
-  | "kitchen";
+type TabKey = "all" | "soft" | "tea" | "hookah" | "kitchen";
 
 interface MenuImage {
   src: string;
@@ -21,8 +14,6 @@ interface MenuImage {
 const tabs: { key: TabKey; label: string }[] = [
   { key: "all", label: "Все" },
   { key: "hookah", label: "Кальяны" },
-  { key: "alcohol", label: "Алкоголь" },
-  { key: "cocktails", label: "Коктейли" },
   { key: "soft", label: "Безалкогольные напитки" },
   { key: "tea", label: "Чай и кофе" },
   { key: "kitchen", label: "Кухня" },
@@ -30,15 +21,12 @@ const tabs: { key: TabKey; label: string }[] = [
 
 const desktopMenus: MenuImage[] = [
   { src: "/menu1.png", alt: "Основное меню" },
-  { src: "/menu2.png", alt: "Барное меню" },
   { src: "/menu3.png", alt: "Кальяны и напитки" },
 ];
 
 const mobileMenus: Record<Exclude<TabKey, "all">, MenuImage[]> = {
   hookah: [{ src: "/tabs_image/кальяны.png", alt: "Кальяны" }],
-  cocktails: [{ src: "/tabs_image/коктейли.png", alt: "Коктейли" }],
   soft: [{ src: "/tabs_image/ба.png", alt: "Безалкогольные напитки" }],
-  alcohol: [{ src: "/tabs_image/алк.png", alt: "Алкоголь" }],
   tea: [{ src: "/tabs_image/кофе.png", alt: "Чай и кофе" }],
   kitchen: [{ src: "/menu3.png", alt: "Кухня" }],
 };
@@ -100,7 +88,7 @@ export default function Home() {
         </div>
       )}
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl w-full">
+      <div className="grid md:flex gap-8 max-w-6xl w-full">
         <AnimatePresence mode="wait">
           {imagesToShow.map((menu, index) => (
             <motion.div
