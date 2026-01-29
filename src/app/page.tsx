@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-type TabKey = "all" | "soft" | "tea" | "hookah" | "kitchen";
+type TabKey = "all" | "soft" | "tea" | "hookah" | "kitchen" | "beer";
 
 interface MenuImage {
   src: string;
@@ -17,11 +17,13 @@ const tabs: { key: TabKey; label: string }[] = [
   { key: "soft", label: "Безалкогольные напитки" },
   { key: "tea", label: "Чай и кофе" },
   { key: "kitchen", label: "Кухня" },
+  { key: "beer", label: "Пиво" },
 ];
 
 const desktopMenus: MenuImage[] = [
   { src: "/menu1.png", alt: "Основное меню" },
   { src: "/menu3.png", alt: "Кальяны и напитки" },
+  { src: "/tabs_image/beer.png", alt: "Пиво" },
 ];
 
 const mobileMenus: Record<Exclude<TabKey, "all">, MenuImage[]> = {
@@ -29,6 +31,7 @@ const mobileMenus: Record<Exclude<TabKey, "all">, MenuImage[]> = {
   soft: [{ src: "/tabs_image/ба.png", alt: "Безалкогольные напитки" }],
   tea: [{ src: "/tabs_image/кофе.png", alt: "Чай и кофе" }],
   kitchen: [{ src: "/menu3.png", alt: "Кухня" }],
+  beer: [{ src: "/tabs_image/beer.png", alt: "Пиво" }],
 };
 
 export default function Home() {
