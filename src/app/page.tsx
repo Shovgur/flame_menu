@@ -22,7 +22,8 @@ const tabs: { key: TabKey; label: string }[] = [
 
 const desktopMenus: MenuImage[] = [
   { src: "/menu1.png", alt: "Основное меню" },
-  { src: "/menu3.png", alt: "Кальяны и напитки" },
+  { src: "/menu3.png", alt: "Кухня" },
+  { src: "/tabs_image/еда.png", alt: "Еда" },
   { src: "/tabs_image/beer.png", alt: "Пиво" },
 ];
 
@@ -30,7 +31,10 @@ const mobileMenus: Record<Exclude<TabKey, "all">, MenuImage[]> = {
   hookah: [{ src: "/tabs_image/кальяны.png", alt: "Кальяны" }],
   soft: [{ src: "/tabs_image/ба.png", alt: "Безалкогольные напитки" }],
   tea: [{ src: "/tabs_image/кофе.png", alt: "Чай и кофе" }],
-  kitchen: [{ src: "/menu3.png", alt: "Кухня" }],
+  kitchen: [
+    { src: "/menu3.png", alt: "Кухня" },
+    { src: "/tabs_image/еда.png", alt: "Еда" },
+  ],
   beer: [{ src: "/tabs_image/beer.png", alt: "Пиво" }],
 };
 
